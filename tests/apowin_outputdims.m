@@ -1,7 +1,11 @@
-function ok = test()
+function [err,data] = test(opt,olddata)
 
-% test dimension of output
+%======================================================
+% Test 3: test dimension of output
+%======================================================
 
 N = 2345;
 w = apowin('ham',N);
-ok = all(size(w)==[N 1]);
+err = (size(w,1)~=N) | (size(w,2)~=1);
+
+data = [];
